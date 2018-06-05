@@ -1,0 +1,38 @@
+#
+#  This file generated at line 270 of /home/forrest/Documents/linpack/ATLAS/intel_i7/..//tune/blas/gemv/mvnhgen.c
+#
+include Make.inc
+
+MVNCC = $(SKC)
+MVNFLAGS = $(CDEFS) $(SKCFLAGS) -DSREAL
+
+obj = ATL_smvnk__900002.o ATL_smvnk__900002_b0.o ATL_smvnk__900005.o ATL_smvnk__900005_b0.o ATL_smvnk__2.o ATL_smvnk__2_b0.o
+lib : slib
+slib : smvnk.grd
+smvnk.grd : $(obj)
+	$(ARCHIVER) $(ARFLAGS) $(ATLASlib) $(obj)
+	$(RANLIB) $(ATLASlib)
+	touch smvnk.grd
+sclean : clean
+clean :
+	- rm -f $(obj) smvnk.grd
+
+skilllib : killlib
+killlib : 
+	- $(ARCHIVER) d $(ATLASlib) $(obj)
+	$(RANLIB) $(ATLASlib)
+killall : killlib clean
+	 rm -f ATL_smvnk__900002.c ATL_smvnk__900005.c ATL_smvnk__2.c
+
+ATL_smvnk__900002.o : ATL_smvnk__900002.c
+	 $(GOODGCC) -o ATL_smvnk__900002.o -c -DATL_UGEMV=ATL_smvnk__900002 -x assembler-with-cpp -DPFIA=prefetcht0 -DPFIX=prefetcht0 -DPFIY=prefetchnta -DPFADIST=448 -DPFXDIST=128 -DPFYDIST=128 -DSREAL $(CDEFS) ATL_smvnk__900002.c
+ATL_smvnk__900002_b0.o : ATL_smvnk__900002.c
+	 $(GOODGCC) -o ATL_smvnk__900002_b0.o -c -DATL_UGEMV=ATL_smvnk__900002_b0 -DBETA0 -x assembler-with-cpp -DPFIA=prefetcht0 -DPFIX=prefetcht0 -DPFIY=prefetchnta -DPFADIST=448 -DPFXDIST=128 -DPFYDIST=128 -DSREAL $(CDEFS) ATL_smvnk__900002.c
+ATL_smvnk__900005.o : ATL_smvnk__900005.c
+	 $(GOODGCC) -o ATL_smvnk__900005.o -c -DATL_UGEMV=ATL_smvnk__900005 -x assembler-with-cpp -DPFIA=prefetchnta -DPFIY=prefetcht0 -DPFADIST=128 -DPFXDIST=256 -DPFYDIST=0 -DSREAL $(CDEFS) ATL_smvnk__900005.c
+ATL_smvnk__900005_b0.o : ATL_smvnk__900005.c
+	 $(GOODGCC) -o ATL_smvnk__900005_b0.o -c -DATL_UGEMV=ATL_smvnk__900005_b0 -DBETA0 -x assembler-with-cpp -DPFIA=prefetchnta -DPFIY=prefetcht0 -DPFADIST=128 -DPFXDIST=256 -DPFYDIST=0 -DSREAL $(CDEFS) ATL_smvnk__900005.c
+ATL_smvnk__2.o : ATL_smvnk__2.c
+	 $(MVNCC) -o ATL_smvnk__2.o -c -DATL_UGEMV=ATL_smvnk__2 $(MVNFLAGS) ATL_smvnk__2.c
+ATL_smvnk__2_b0.o : ATL_smvnk__2.c
+	 $(MVNCC) -o ATL_smvnk__2_b0.o -c -DATL_UGEMV=ATL_smvnk__2_b0 -DBETA0 $(MVNFLAGS) ATL_smvnk__2.c

@@ -1,0 +1,1 @@
+/home/forrest/Documents/linpack/ATLAS/intel_i7/Make.inc

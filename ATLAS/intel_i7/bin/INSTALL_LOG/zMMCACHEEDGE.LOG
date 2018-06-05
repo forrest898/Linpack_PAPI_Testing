@@ -1,0 +1,4 @@
+make[2]: Entering directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/bin'
+cp /home/forrest/Documents/linpack/ATLAS/intel_i7/tune/blas/gemm/res/atlas_zdNKB.h /home/forrest/Documents/linpack/ATLAS/intel_i7/include/.
+cp /home/forrest/Documents/linpack/ATLAS/intel_i7/tune/blas/gemm/res/atlas_zdNKB.h INSTALL_LOG/.
+make[2]: Leaving directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/bin'

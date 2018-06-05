@@ -1,0 +1,38 @@
+#
+#  This file generated at line 274 of /home/forrest/Documents/linpack/ATLAS/intel_i7/..//tune/blas/gemv/mvthgen.c
+#
+include Make.inc
+
+MVTCC = $(DKC)
+MVTFLAGS = $(CDEFS) $(DKCFLAGS) -DDREAL
+
+obj = ATL_dmvtk__900002.o ATL_dmvtk__900002_b0.o ATL_dmvtk__900008.o ATL_dmvtk__900008_b0.o ATL_dmvtk__900005.o ATL_dmvtk__900005_b0.o
+lib : dlib
+dlib : dmvtk.grd
+dmvtk.grd : $(obj)
+	$(ARCHIVER) $(ARFLAGS) $(ATLASlib) $(obj)
+	$(RANLIB) $(ATLASlib)
+	touch dmvtk.grd
+dclean : clean
+clean :
+	- rm -f $(obj) dmvtk.grd
+
+dkilllib : killlib
+killlib : 
+	- $(ARCHIVER) d $(ATLASlib) $(obj)
+	$(RANLIB) $(ATLASlib)
+killall : killlib clean
+	 rm -f ATL_dmvtk__900002.c ATL_dmvtk__900008.c ATL_dmvtk__900005.c
+
+ATL_dmvtk__900002.o : ATL_dmvtk__900002.c
+	 $(GOODGCC) -o ATL_dmvtk__900002.o -c -DATL_UGEMV=ATL_dmvtk__900002 -x assembler-with-cpp -DPFIA=prefetcht0 -DPFIX=prefetcht2 -DPFIY=prefetcht2 -DPFADIST=640 -DPFXDIST=512 -DDREAL $(CDEFS) ATL_dmvtk__900002.c
+ATL_dmvtk__900002_b0.o : ATL_dmvtk__900002.c
+	 $(GOODGCC) -o ATL_dmvtk__900002_b0.o -c -DATL_UGEMV=ATL_dmvtk__900002_b0 -DBETA0 -x assembler-with-cpp -DPFIA=prefetcht0 -DPFIX=prefetcht2 -DPFIY=prefetcht2 -DPFADIST=640 -DPFXDIST=512 -DDREAL $(CDEFS) ATL_dmvtk__900002.c
+ATL_dmvtk__900008.o : ATL_dmvtk__900008.c
+	 $(GOODGCC) -o ATL_dmvtk__900008.o -c -DATL_UGEMV=ATL_dmvtk__900008 -x assembler-with-cpp -DPFIA=prefetchnta -DPFIX=prefetcht1 -DPFIY=prefetchnta -DPFADIST=0 -DPFYDIST=448 -DDREAL $(CDEFS) ATL_dmvtk__900008.c
+ATL_dmvtk__900008_b0.o : ATL_dmvtk__900008.c
+	 $(GOODGCC) -o ATL_dmvtk__900008_b0.o -c -DATL_UGEMV=ATL_dmvtk__900008_b0 -DBETA0 -x assembler-with-cpp -DPFIA=prefetchnta -DPFIX=prefetcht1 -DPFIY=prefetchnta -DPFADIST=0 -DPFYDIST=448 -DDREAL $(CDEFS) ATL_dmvtk__900008.c
+ATL_dmvtk__900005.o : ATL_dmvtk__900005.c
+	 $(GOODGCC) -o ATL_dmvtk__900005.o -c -DATL_UGEMV=ATL_dmvtk__900005 -x assembler-with-cpp -DPFIA=prefetchnta -DPFIY=prefetcht0 -DPFADIST=768 -DPFYDIST=128 -DDREAL $(CDEFS) ATL_dmvtk__900005.c
+ATL_dmvtk__900005_b0.o : ATL_dmvtk__900005.c
+	 $(GOODGCC) -o ATL_dmvtk__900005_b0.o -c -DATL_UGEMV=ATL_dmvtk__900005_b0 -DBETA0 -x assembler-with-cpp -DPFIA=prefetchnta -DPFIY=prefetcht0 -DPFADIST=768 -DPFYDIST=128 -DDREAL $(CDEFS) ATL_dmvtk__900005.c

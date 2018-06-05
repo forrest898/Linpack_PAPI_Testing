@@ -1,0 +1,40 @@
+
+*******************************************************************************
+*******************************************************************************
+*******************************************************************************
+*       BEGAN ATLAS3.10.3 INSTALL OF SECTION 4-3-1 ON 06/04/2018 AT 08:59     *
+*******************************************************************************
+*******************************************************************************
+*******************************************************************************
+
+
+
+make[2]: Entering directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/bin'
+if [ -s "/home/forrest/Documents/linpack/ATLAS/intel_i7/include/atlas_dGetNB_geqrf.h" ]; then \
+           echo "Arch Defaults allow us to skip tuning" ; \
+        else \
+    cd /home/forrest/Documents/linpack/ATLAS/intel_i7/tune/lapack ; make res/ATL_dGetNB_geqrf.h ; \
+    cp /home/forrest/Documents/linpack/ATLAS/intel_i7/tune/lapack/res/ATL_dGetNB_geqrf.h \
+               /home/forrest/Documents/linpack/ATLAS/intel_i7/include/atlas_dGetNB_geqrf.h ; \
+        fi
+Arch Defaults allow us to skip tuning
+if [ -s "/home/forrest/Documents/linpack/ATLAS/intel_i7/include/atlas_dtGetNB_geqrf.h" ]; then \
+           echo "Arch Defaults allow us to skip threaded tuning" ; \
+        elif [ -s "/home/forrest/Documents/linpack/ATLAS/intel_i7/include/atlas_pthreads.h" ]; then \
+    cd /home/forrest/Documents/linpack/ATLAS/intel_i7/tune/lapack ; make res/ATL_dtGetNB_geqrf.h ; \
+    cp /home/forrest/Documents/linpack/ATLAS/intel_i7/tune/lapack/res/ATL_dtGetNB_geqrf.h \
+               /home/forrest/Documents/linpack/ATLAS/intel_i7/include/atlas_dtGetNB_geqrf.h ; \
+        fi
+Arch Defaults allow us to skip threaded tuning
+make[2]: Leaving directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/bin'
+
+*******************************************************************************
+*******************************************************************************
+*******************************************************************************
+*      FINISHED ATLAS3.10.3 INSTALL OF SECTION 4-3-1 ON 06/04/2018 AT 08:59   *
+*******************************************************************************
+*******************************************************************************
+*******************************************************************************
+
+
+

@@ -1,0 +1,1 @@
+'/usr/bin/gcc-5 -fomit-frame-pointer -mfpmath=sse -O2 -mavx2 -mfma -m64 -m64'

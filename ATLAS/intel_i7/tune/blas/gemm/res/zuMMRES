@@ -1,0 +1,2 @@
+CASE  NB    MFLOP  ROUTINE
+ 244  60 24209.50  "ATL_dmm4x2x4_avx.c" "R. Clint Whaley"

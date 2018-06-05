@@ -1,0 +1,89 @@
+#
+#MFLOP array has following meaning by index:
+#   0 : Out-of-cache, L1 blocked
+#   1 : Out-of-cache, L2 blocked
+#   2 : Out-of-cache, no blocking
+#   3 : Problem preloaded to L2, no blocking
+#   4 : Problem preloaded to L1, no blocking
+#
+#
+#Each kernel context has multiple kernels:
+#   All kernels with rankR > 0 have restrictions, and are only
+#   used when certain conditions are met.  The last kernel in
+#   the context series has rankR=0, and can be called for any valid input
+#
+# ------------------------------------------------------------------------
+# Following 2 GER2 kernels are optimized for out-of-cache operands
+# ------------------------------------------------------------------------
+ID=4 ROUT='ATL_zger2k_rk2_avx.c' AUTH='R. Clint Whaley' KNAME='ATL_zger2k__4' \
+   rankR=1 CacheElts=15360 SSE=3 alignA=32 alignY=32 alignX=32 minM=0 minN=0  \
+   NU=3 MU=2 LDAMUL=32 PFTUNABLE=0 ALIGNX2A=0 ADDCFLAGS=0 FNU=1 INCYISONE=0  \
+   X87=0  \
+   MFLOP=1.028863e+04,-1.440191e+04 \
+     CFLAGS='-fomit-frame-pointer -mfpmath=sse -mavx -O2 -fno-schedule-insns2' \
+     COMP='gcc'
+ID=900002 ROUT='zr2_sse.c' AUTH='R. Clint Whaley' KNAME='ATL_zger2k__900002' \
+   rankR=0 CacheElts=15360 SSE=3 alignA=0 alignY=16 alignX=16 minM=4 minN=2  \
+   NU=2 MU=4 LDAMUL=0 PFTUNABLE=1 ALIGNX2A=0 ADDCFLAGS=0 FNU=1 INCYISONE=1  \
+   X87=0  \
+   MFLOP=1.719137e+03,-1.333596e+04  ASM=GAS_x8664 \
+     CFLAGS='-x assembler-with-cpp -DPFIX=prefetchnta -DPFIY=prefetcht1 -DPFXDIST=960' \
+     COMP='gcc'
+# ------------------------------------------------------------------------
+# Following 3 GER2 kernels are optimized for operands preloaded to the L2 cache
+# ------------------------------------------------------------------------
+ID=4 ROUT='ATL_zger2k_rk2_avx.c' AUTH='R. Clint Whaley' KNAME='ATL_zger2k__4' \
+   rankR=2 CacheElts=15360 SSE=3 alignA=32 alignY=32 alignX=32 minM=0 minN=0  \
+   NU=3 MU=2 LDAMUL=32 PFTUNABLE=0 ALIGNX2A=0 ADDCFLAGS=0 FNU=1 INCYISONE=0  \
+   X87=0  \
+   MFLOP=-1.187919e+04,-1.440191e+04,0.000000e+00,2.195731e+04,-2.632899e+04 \
+     CFLAGS='-fomit-frame-pointer -mfpmath=sse -mavx -O2 -fno-schedule-insns2' \
+     COMP='gcc'
+ID=2 ROUT='ATL_zger2k_2x1_sse3.c' AUTH='R. Clint Whaley' KNAME='ATL_zger2k__2' \
+   rankR=1 CacheElts=15360 SSE=3 alignA=16 alignY=0 alignX=16 minM=4 minN=2  \
+   NU=2 MU=1 LDAMUL=16 PFTUNABLE=0 ALIGNX2A=0 ADDCFLAGS=0 FNU=1 INCYISONE=0  \
+   X87=0  \
+   MFLOP=-1.073609e+04,-1.338884e+04,0.000000e+00,3.442142e+03,-1.562446e+04 \
+     CFLAGS='-x assembler-with-cpp'  COMP='gcc'
+ID=900002 ROUT='zr2_sse.c' AUTH='R. Clint Whaley' KNAME='ATL_zger2k__900002' \
+   rankR=0 CacheElts=15360 SSE=3 alignA=0 alignY=16 alignX=16 minM=4 minN=2  \
+   NU=2 MU=4 LDAMUL=0 PFTUNABLE=1 ALIGNX2A=0 ADDCFLAGS=0 FNU=1 INCYISONE=1  \
+   X87=0  \
+   MFLOP=-1.031388e+04,-1.257094e+04,0.000000e+00,1.732146e+03,-1.508181e+04 \
+     ASM=GAS_x8664 \
+     CFLAGS='-x assembler-with-cpp -DPFIX=prefetcht1 -DPFADIST=128 -DPFXDIST=256 -DPFYDIST=128' \
+     COMP='gcc'
+# ------------------------------------------------------------------------
+# Following 3 GER2 kernels are optimized for operands preloaded to the L1 cache
+# ------------------------------------------------------------------------
+ID=4 ROUT='ATL_zger2k_rk2_avx.c' AUTH='R. Clint Whaley' KNAME='ATL_zger2k__4' \
+   rankR=2 CacheElts=2048 SSE=3 alignA=32 alignY=32 alignX=32 minM=0 minN=0  \
+   NU=3 MU=2 LDAMUL=32 PFTUNABLE=0 ALIGNX2A=0 ADDCFLAGS=0 FNU=1 INCYISONE=0  \
+   X87=0  \
+   MFLOP=-1.187919e+04,-1.440191e+04,0.000000e+00,0.000000e+00,2.102173e+04 \
+     CFLAGS='-fomit-frame-pointer -mfpmath=sse -mavx -O2 -fno-schedule-insns2' \
+     COMP='gcc'
+ID=2 ROUT='ATL_zger2k_2x1_sse3.c' AUTH='R. Clint Whaley' KNAME='ATL_zger2k__2' \
+   rankR=1 CacheElts=2048 SSE=3 alignA=16 alignY=0 alignX=16 minM=4 minN=2  \
+   NU=2 MU=1 LDAMUL=16 PFTUNABLE=0 ALIGNX2A=0 ADDCFLAGS=0 FNU=1 INCYISONE=0  \
+   X87=0  \
+   MFLOP=-1.073609e+04,-1.338884e+04,0.000000e+00,0.000000e+00,3.460123e+03 \
+     CFLAGS='-x assembler-with-cpp'  COMP='gcc'
+ID=900002 ROUT='zr2_sse.c' AUTH='R. Clint Whaley' KNAME='ATL_zger2k__900002' \
+   rankR=0 CacheElts=2048 SSE=3 alignA=0 alignY=16 alignX=16 minM=4 minN=2  \
+   NU=2 MU=4 LDAMUL=0 PFTUNABLE=1 ALIGNX2A=0 ADDCFLAGS=0 FNU=1 INCYISONE=1  \
+   X87=0  \
+   MFLOP=-1.031388e+04,-1.257094e+04,0.000000e+00,0.000000e+00,1.727239e+03 \
+     ASM=GAS_x8664 \
+     CFLAGS='-x assembler-with-cpp -DPFIA=prefetcht0 -DPFIX=prefetchnta -DPFIY=prefetchnta -DPFADIST=0 -DPFYDIST=384' \
+     COMP='gcc'
+# ------------------------------------------------------------------------
+# Following 1 GER2 kernels are optimized for operands out-of-cache, but blocked
+# for L1 reuse.  These are used in low-rank update
+# ------------------------------------------------------------------------
+ID=900002 ROUT='zr2_sse.c' AUTH='R. Clint Whaley' KNAME='ATL_zger2k__900002' \
+   rankR=0 CacheElts=2048 SSE=3 alignA=0 alignY=16 alignX=16 minM=4 minN=2  \
+   NU=2 MU=4 LDAMUL=0 PFTUNABLE=1 ALIGNX2A=0 ADDCFLAGS=0 FNU=1 INCYISONE=1  \
+   X87=0  \
+   MFLOP=1.689561e+03,-1.261568e+04  ASM=GAS_x8664 \
+     CFLAGS='-x assembler-with-cpp -DPFIX=prefetcht2 -DPFYDIST=0'  COMP='gcc'

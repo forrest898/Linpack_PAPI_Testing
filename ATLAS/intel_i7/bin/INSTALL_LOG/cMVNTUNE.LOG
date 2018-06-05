@@ -1,0 +1,90 @@
+
+*******************************************************************************
+*******************************************************************************
+*******************************************************************************
+*       BEGAN ATLAS3.10.3 INSTALL OF SECTION 2-4-7 ON 06/04/2018 AT 08:57     *
+*******************************************************************************
+*******************************************************************************
+*******************************************************************************
+
+
+
+make[2]: Entering directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/bin'
+cd /home/forrest/Documents/linpack/ATLAS/intel_i7/tune/blas/gemv ; make res/cMVNK.sum pre=c
+make[3]: Entering directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/tune/blas/gemv'
+./xmvnksearch -p c
+
+      Read in L1 Cache size as = 32KB.
+   900002:cmvn_sse.c (M=2300, N=2000, lda=2303) gets 4341.82 MFLOPS
+   900002:cmvn_sse.c (M=1024, N=16, lda=1029) gets 4686.61 MFLOPS
+   900002:cmvn_sse.c (M=435, N=8, lda=441) gets 4818.67 MFLOPS
+   900002:cmvn_sse.c (M=2300, N=2000, lda=2303) gets 4126.34 MFLOPS
+ID=900002 ROUT='cmvn_sse.c' AUTH='R. Clint Whaley' TA='N' KNAME='ATL_cmvnk__900002' \
+   rankR=0 CacheElts=20480 SSE=3 alignA=0 alignY=16 alignX=16 minM=16 minN=2  \
+   NU=2 MU=16 LDAMUL=0 PFTUNABLE=1 ALIGNX2A=0 ADDCFLAGS=0 GEMMBASED=0 AXPYBASED=1  \
+   ALLALIGNXY=0 LDYTOP=0 FNU=1 X87=0  \
+   MFLOP=4.341823e+03,-2.466841e+04  ASM=GAS_x8664 \
+     CFLAGS='-x assembler-with-cpp -DPFIA=prefetcht0 -DPFIX=prefetcht0 -DPFIY=prefetcht0 -DPFADIST=512 -DPFXDIST=1280 -DPFYDIST=192' \
+     COMP='gcc'
+ID=900002 ROUT='cmvn_sse.c' AUTH='R. Clint Whaley' TA='N' KNAME='ATL_cmvnk__900002' \
+   rankR=0 CacheElts=20480 SSE=3 alignA=0 alignY=16 alignX=16 minM=16 minN=2  \
+   NU=2 MU=16 LDAMUL=0 PFTUNABLE=1 ALIGNX2A=0 ADDCFLAGS=0 GEMMBASED=0 AXPYBASED=1  \
+   ALLALIGNXY=0 LDYTOP=0 FNU=1 X87=0  \
+   MFLOP=-1.508131e+04,-2.218029e+04,0.000000e+00,4.686606e+03,-3.144849e+04 \
+     ASM=GAS_x8664 \
+     CFLAGS='-x assembler-with-cpp -DPFIA=prefetcht0 -DPFIX=prefetcht2 -DPFIY=prefetchnta -DPFADIST=128 -DPFXDIST=0 -DPFYDIST=192' \
+     COMP='gcc'
+ID=900002 ROUT='cmvn_sse.c' AUTH='R. Clint Whaley' TA='N' KNAME='ATL_cmvnk__900002' \
+   rankR=0 CacheElts=3522 SSE=3 alignA=0 alignY=16 alignX=16 minM=16 minN=2  \
+   NU=2 MU=16 LDAMUL=0 PFTUNABLE=1 ALIGNX2A=0 ADDCFLAGS=0 GEMMBASED=0 AXPYBASED=1  \
+   ALLALIGNXY=0 LDYTOP=0 FNU=1 X87=0  \
+   MFLOP=-1.508131e+04,-2.218029e+04,0.000000e+00,0.000000e+00,4.818673e+03 \
+     ASM=GAS_x8664 \
+     CFLAGS='-x assembler-with-cpp -DPFIA=prefetcht1 -DPFIX=prefetcht0 -DPFIY=prefetcht2 -DPFADIST=256 -DPFXDIST=448 -DPFYDIST=128' \
+     COMP='gcc'
+ID=900002 ROUT='cmvn_sse.c' AUTH='R. Clint Whaley' TA='N' KNAME='ATL_cmvnk__900002' \
+   rankR=0 CacheElts=3522 SSE=3 alignA=0 alignY=16 alignX=16 minM=16 minN=2  \
+   NU=2 MU=16 LDAMUL=0 PFTUNABLE=1 ALIGNX2A=0 ADDCFLAGS=0 GEMMBASED=0 AXPYBASED=1  \
+   ALLALIGNXY=0 LDYTOP=0 FNU=1 X87=0  \
+   MFLOP=4.126335e+03,-2.236003e+04  ASM=GAS_x8664 \
+     CFLAGS='-x assembler-with-cpp -DPFIA=prefetcht0 -DPFIX=prefetchnta -DPFADIST=0 -DPFXDIST=0 -DPFYDIST=128' \
+     COMP='gcc'
+make cmvninstall
+make[4]: Entering directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/tune/blas/gemv'
+mkdir cmvnoutd
+rm -f cmvnoutd/*
+if [ -s "/home/forrest/Documents/linpack/ATLAS/intel_i7/src/blas/gemv/Make_cmvn" ]; then \
+           cd  /home/forrest/Documents/linpack/ATLAS/intel_i7/src/blas/gemv ; make -f Make_cmvn killall ; \
+           rm -f /home/forrest/Documents/linpack/ATLAS/intel_i7/src/blas/gemv/Make_cmvn ; \
+        fi
+./xmvnhgen -p c -F res/cMVNK.sum -d cmvnoutd
+make[5]: Entering directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/tune/blas/gemv'
+/home/forrest/Documents/linpack/ATLAS/intel_i7/bin/xextract -b /home/forrest/Documents/linpack/ATLAS/intel_i7/..//tune/blas/gemv/atlas-l2g.base order=clmajor \
+                           rout=mvn_sse nu=2 type=SCPLX -def MU 2 \
+                            -o EXTDIR/cmvn_sse.c
+make[5]: Leaving directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/tune/blas/gemv'
+cp -f cmvnoutd/Make_cmvn /home/forrest/Documents/linpack/ATLAS/intel_i7/src/blas/gemv/.
+cp cmvnoutd/*.c /home/forrest/Documents/linpack/ATLAS/intel_i7/src/blas/gemv/.
+cp -f cmvnoutd/*.h /home/forrest/Documents/linpack/ATLAS/intel_i7/include/.
+if [ -s "xccobj.exe" ] ; then \
+   cp -f xccobj.exe /home/forrest/Documents/linpack/ATLAS/intel_i7/src/blas/gemv/. ; \
+elif [ -s "xccobj" ]; then \
+           cp -f xccobj /home/forrest/Documents/linpack/ATLAS/intel_i7/src/blas/gemv/. ; \
+        fi
+touch /home/forrest/Documents/linpack/ATLAS/intel_i7/..//include/atlas_mv.h
+rm -f cmvnoutd/* ; rmdir cmvnoutd
+make[4]: Leaving directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/tune/blas/gemv'
+make[3]: Leaving directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/tune/blas/gemv'
+cp /home/forrest/Documents/linpack/ATLAS/intel_i7/tune/blas/gemv/res/cMVNK.sum INSTALL_LOG/.
+make[2]: Leaving directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/bin'
+
+*******************************************************************************
+*******************************************************************************
+*******************************************************************************
+*      FINISHED ATLAS3.10.3 INSTALL OF SECTION 2-4-7 ON 06/04/2018 AT 08:57   *
+*******************************************************************************
+*******************************************************************************
+*******************************************************************************
+
+
+

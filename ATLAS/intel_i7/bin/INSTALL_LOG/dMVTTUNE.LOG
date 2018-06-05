@@ -1,0 +1,104 @@
+
+*******************************************************************************
+*******************************************************************************
+*******************************************************************************
+*       BEGAN ATLAS3.10.3 INSTALL OF SECTION 2-1-7 ON 06/04/2018 AT 08:53     *
+*******************************************************************************
+*******************************************************************************
+*******************************************************************************
+
+
+
+make[2]: Entering directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/bin'
+cd /home/forrest/Documents/linpack/ATLAS/intel_i7/tune/blas/gemv ; make res/dMVTK.sum pre=d
+make[3]: Entering directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/tune/blas/gemv'
+/usr/bin/gcc-5 -c -DL2SIZE=33554432 -I/home/forrest/Documents/linpack/ATLAS/intel_i7/include -I/home/forrest/Documents/linpack/ATLAS/intel_i7/..//include -I/home/forrest/Documents/linpack/ATLAS/intel_i7/..//include/contrib -DAdd_ -DF77_INTEGER=int -DStringSunStyle -DATL_OS_Linux -DATL_ARCH_Corei4 -DATL_CPUMHZ=2712 -DATL_AVXMAC -DATL_AVX -DATL_SSE3 -DATL_SSE2 -DATL_SSE1 -DATL_USE64BITS -DATL_GAS_x8664 -m64 -DPentiumCPS=2400 -DATL_FULL_LAPACK -DATL_NCPU=8 -fomit-frame-pointer -mfpmath=sse -O2 -m64 -o mvtksearch.o /home/forrest/Documents/linpack/ATLAS/intel_i7/..//tune/blas/gemv/mvtksearch.c
+/usr/bin/gcc-5 -DL2SIZE=33554432 -I/home/forrest/Documents/linpack/ATLAS/intel_i7/include -I/home/forrest/Documents/linpack/ATLAS/intel_i7/..//include -I/home/forrest/Documents/linpack/ATLAS/intel_i7/..//include/contrib -DAdd_ -DF77_INTEGER=int -DStringSunStyle -DATL_OS_Linux -DATL_ARCH_Corei4 -DATL_CPUMHZ=2712 -DATL_AVXMAC -DATL_AVX -DATL_SSE3 -DATL_SSE2 -DATL_SSE1 -DATL_USE64BITS -DATL_GAS_x8664 -m64 -DPentiumCPS=2400 -DATL_FULL_LAPACK -DATL_NCPU=8 -fomit-frame-pointer -mfpmath=sse -O2 -m64 -o xmvtksearch mvtksearch.o
+mvtksearch.o: In function `TimeMVKernel':
+mvtksearch.c:(.text+0x1ca8): warning: the use of `tmpnam' is dangerous, better use `mkstemp'
+./xmvtksearch -p d
+
+      Read in L1 Cache size as = 32KB.
+   900002:dmvt_sse.c (M=2300, N=2000, lda=2303) gets 1799.83 MFLOPS
+   900008:dmvt_sse.c (M=910, N=18, lda=917) gets 1942.08 MFLOPS
+   900005:dmvt_sse.c (M=435, N=8, lda=441) gets 1997.52 MFLOPS
+   900002:dmvt_sse.c (M=2300, N=2000, lda=2303) gets 1659.68 MFLOPS
+ID=900002 ROUT='dmvt_sse.c' AUTH='R. Clint Whaley' TA='T' KNAME='ATL_dmvtk__900002' \
+   rankR=0 CacheElts=24576 SSE=3 alignA=0 alignY=16 alignX=16 minM=16 minN=2  \
+   NU=2 MU=16 LDAMUL=0 PFTUNABLE=1 ALIGNX2A=0 ADDCFLAGS=0 GEMMBASED=0 AXPYBASED=0  \
+   ALLALIGNXY=0 LDYTOP=0 FNU=1 X87=0  \
+   MFLOP=1.799826e+03,-6.619867e+03  ASM=GAS_x8664 \
+     CFLAGS='-x assembler-with-cpp -DPFIA=prefetcht0 -DPFIX=prefetcht2 -DPFIY=prefetcht2 -DPFADIST=640 -DPFXDIST=512' \
+     COMP='gcc'
+ID=900008 ROUT='dmvt_sse.c' AUTH='R. Clint Whaley' TA='T' KNAME='ATL_dmvtk__900008' \
+   rankR=0 CacheElts=24576 SSE=3 alignA=0 alignY=16 alignX=16 minM=8 minN=6  \
+   NU=6 MU=8 LDAMUL=0 PFTUNABLE=1 ALIGNX2A=0 ADDCFLAGS=0 GEMMBASED=0 AXPYBASED=0  \
+   ALLALIGNXY=0 LDYTOP=0 FNU=1 X87=0  \
+   MFLOP=0.000000e+00,0.000000e+00,0.000000e+00,1.942080e+03,-1.496388e+04 \
+     ASM=GAS_x8664 \
+     CFLAGS='-x assembler-with-cpp -DPFIA=prefetchnta -DPFIX=prefetcht1 -DPFIY=prefetchnta -DPFADIST=0 -DPFYDIST=448' \
+     COMP='gcc'
+ID=900005 ROUT='dmvt_sse.c' AUTH='R. Clint Whaley' TA='T' KNAME='ATL_dmvtk__900005' \
+   rankR=0 CacheElts=3850 SSE=3 alignA=0 alignY=16 alignX=16 minM=24 minN=8  \
+   NU=8 MU=24 LDAMUL=0 PFTUNABLE=1 ALIGNX2A=0 ADDCFLAGS=0 GEMMBASED=0 AXPYBASED=0  \
+   ALLALIGNXY=0 LDYTOP=0 FNU=1 X87=0  \
+   MFLOP=0.000000e+00,0.000000e+00,0.000000e+00,0.000000e+00,1.997524e+03 \
+     ASM=GAS_x8664 \
+     CFLAGS='-x assembler-with-cpp -DPFIA=prefetchnta -DPFIY=prefetcht0 -DPFADIST=768 -DPFYDIST=128' \
+     COMP='gcc'
+ID=900002 ROUT='dmvt_sse.c' AUTH='R. Clint Whaley' TA='T' KNAME='ATL_dmvtk__900002' \
+   rankR=0 CacheElts=3850 SSE=3 alignA=0 alignY=16 alignX=16 minM=16 minN=2  \
+   NU=2 MU=16 LDAMUL=0 PFTUNABLE=1 ALIGNX2A=0 ADDCFLAGS=0 GEMMBASED=0 AXPYBASED=0  \
+   ALLALIGNXY=0 LDYTOP=0 FNU=1 X87=0  \
+   MFLOP=1.659679e+03,-6.019339e+03  ASM=GAS_x8664 \
+     CFLAGS='-x assembler-with-cpp -DPFIA=prefetcht0 -DPFIY=prefetchnta -DPFADIST=0 -DPFXDIST=192 -DPFYDIST=128' \
+     COMP='gcc'
+make dmvtinstall
+make[4]: Entering directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/tune/blas/gemv'
+mkdir dmvtoutd
+rm -f dmvtoutd/*
+if [ -s "/home/forrest/Documents/linpack/ATLAS/intel_i7/src/blas/gemv/Make_dmvt" ]; then \
+           cd  /home/forrest/Documents/linpack/ATLAS/intel_i7/src/blas/gemv ; make -f Make_dmvt killall ; \
+           rm -f /home/forrest/Documents/linpack/ATLAS/intel_i7/src/blas/gemv/Make_dmvt ; \
+        fi
+./xmvthgen -p d -F res/dMVTK.sum -d dmvtoutd
+make[5]: Entering directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/tune/blas/gemv'
+/home/forrest/Documents/linpack/ATLAS/intel_i7/bin/xextract -b /home/forrest/Documents/linpack/ATLAS/intel_i7/..//tune/blas/gemv/atlas-l2g.base order=clmajor \
+                           rout=mvt_sse nu=2 type=DREAL -def MU 2 \
+                            -o EXTDIR/dmvt_sse.c
+make[5]: Leaving directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/tune/blas/gemv'
+make[5]: Entering directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/tune/blas/gemv'
+/home/forrest/Documents/linpack/ATLAS/intel_i7/bin/xextract -b /home/forrest/Documents/linpack/ATLAS/intel_i7/..//tune/blas/gemv/atlas-l2g.base order=clmajor \
+                           rout=mvt_sse nu=6 type=DREAL -def MU 1 \
+                            -o EXTDIR/dmvt_sse.c
+make[5]: Leaving directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/tune/blas/gemv'
+make[5]: Entering directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/tune/blas/gemv'
+/home/forrest/Documents/linpack/ATLAS/intel_i7/bin/xextract -b /home/forrest/Documents/linpack/ATLAS/intel_i7/..//tune/blas/gemv/atlas-l2g.base order=clmajor \
+                           rout=mvt_sse nu=8 type=DREAL -def MU 3 \
+                            -o EXTDIR/dmvt_sse.c
+make[5]: Leaving directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/tune/blas/gemv'
+cp -f dmvtoutd/Make_dmvt /home/forrest/Documents/linpack/ATLAS/intel_i7/src/blas/gemv/.
+cp dmvtoutd/*.c /home/forrest/Documents/linpack/ATLAS/intel_i7/src/blas/gemv/.
+cp -f dmvtoutd/*.h /home/forrest/Documents/linpack/ATLAS/intel_i7/include/.
+if [ -s "xccobj.exe" ] ; then \
+   cp -f xccobj.exe /home/forrest/Documents/linpack/ATLAS/intel_i7/src/blas/gemv/. ; \
+elif [ -s "xccobj" ]; then \
+           cp -f xccobj /home/forrest/Documents/linpack/ATLAS/intel_i7/src/blas/gemv/. ; \
+        fi
+touch /home/forrest/Documents/linpack/ATLAS/intel_i7/..//include/atlas_mv.h
+rm -f dmvtoutd/* ; rmdir dmvtoutd
+make[4]: Leaving directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/tune/blas/gemv'
+make[3]: Leaving directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/tune/blas/gemv'
+cp /home/forrest/Documents/linpack/ATLAS/intel_i7/tune/blas/gemv/res/dMVTK.sum INSTALL_LOG/.
+make[2]: Leaving directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/bin'
+
+*******************************************************************************
+*******************************************************************************
+*******************************************************************************
+*      FINISHED ATLAS3.10.3 INSTALL OF SECTION 2-1-7 ON 06/04/2018 AT 08:53   *
+*******************************************************************************
+*******************************************************************************
+*******************************************************************************
+
+
+

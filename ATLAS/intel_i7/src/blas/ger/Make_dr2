@@ -1,0 +1,34 @@
+#
+#  This file generated at line 658 of /home/forrest/Documents/linpack/ATLAS/intel_i7/..//tune/blas/ger/r2hgen.c
+#
+include Make.inc
+
+R2CC = $(DKC)
+R2FLAGS = $(CDEFS) $(DKCFLAGS) -DDREAL
+
+obj = ATL_dger2k__900002.o ATL_dger2k__900006.o ATL_dger2k__900008.o ATL_dger2k__900005.o
+lib : dlib
+dlib : dr2k.grd
+dr2k.grd : $(obj)
+	$(ARCHIVER) $(ARFLAGS) $(ATLASlib) $(obj)
+	$(RANLIB) $(ATLASlib)
+	touch dr2k.grd
+dclean : clean
+clean :
+	- rm -f $(obj) dr2k.grd
+
+dkilllib : killlib
+killlib : 
+	- $(ARCHIVER) d $(ATLASlib) $(obj)
+	$(RANLIB) $(ATLASlib)
+killall : killlib clean
+	 rm -f ATL_dger2k__900002.c ATL_dger2k__900006.c ATL_dger2k__900008.c ATL_dger2k__900005.c
+
+ATL_dger2k__900002.o : ATL_dger2k__900002.c
+	 $(GOODGCC) -o ATL_dger2k__900002.o -c -DATL_UGER2K=ATL_dger2k__900002 -x assembler-with-cpp -DPFIA=prefetcht0 -DPFIX=prefetcht2 -DPFIY=prefetchnta -DPFXDIST=256 -DPFYDIST=0 -DDREAL $(CDEFS) ATL_dger2k__900002.c
+ATL_dger2k__900006.o : ATL_dger2k__900006.c
+	 $(GOODGCC) -o ATL_dger2k__900006.o -c -DATL_UGER2K=ATL_dger2k__900006 -x assembler-with-cpp -DPFIA=prefetcht0 -DPFIX=prefetchnta -DPFIY=prefetcht2 -DPFXDIST=0 -DPFYDIST=256 -DDREAL $(CDEFS) ATL_dger2k__900006.c
+ATL_dger2k__900008.o : ATL_dger2k__900008.c
+	 $(GOODGCC) -o ATL_dger2k__900008.o -c -DATL_UGER2K=ATL_dger2k__900008 -x assembler-with-cpp -DPFIA=prefetchnta -DPFIX=prefetcht2 -DPFIY=prefetcht0 -DPFADIST=0 -DPFXDIST=1664 -DPFYDIST=256 -DDREAL $(CDEFS) ATL_dger2k__900008.c
+ATL_dger2k__900005.o : ATL_dger2k__900005.c
+	 $(GOODGCC) -o ATL_dger2k__900005.o -c -DATL_UGER2K=ATL_dger2k__900005 -x assembler-with-cpp -DPFIX=prefetchnta -DPFIY=prefetcht2 -DPFADIST=256 -DPFXDIST=0 -DPFYDIST=896 -DDREAL $(CDEFS) ATL_dger2k__900005.c

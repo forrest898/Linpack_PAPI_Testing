@@ -1,0 +1,57 @@
+#
+#MFLOP array has following meaning by index:
+#   0 : Out-of-cache, L1 blocked
+#   1 : Out-of-cache, L2 blocked
+#   2 : Out-of-cache, no blocking
+#   3 : Problem preloaded to L2, no blocking
+#   4 : Problem preloaded to L1, no blocking
+#
+#
+#Each kernel context has multiple kernels:
+#   All kernels with rankR > 0 have restrictions, and are only
+#   used when certain conditions are met.  The last kernel in
+#   the context series has rankR=0, and can be called for any valid input
+#
+# ------------------------------------------------------------------------
+# Following 1 GEMV kernels are optimized for out-of-cache operands
+# ------------------------------------------------------------------------
+ID=900002 ROUT='cmvn_sse.c' AUTH='R. Clint Whaley' TA='N' KNAME='ATL_cmvnk__900002' \
+   rankR=0 CacheElts=20480 SSE=3 alignA=0 alignY=16 alignX=16 minM=16 minN=2  \
+   NU=2 MU=16 LDAMUL=0 PFTUNABLE=1 ALIGNX2A=0 ADDCFLAGS=0 GEMMBASED=0 AXPYBASED=1  \
+   ALLALIGNXY=0 LDYTOP=0 FNU=1 X87=0  \
+   MFLOP=4.341823e+03,-2.466841e+04  ASM=GAS_x8664 \
+     CFLAGS='-x assembler-with-cpp -DPFIA=prefetcht0 -DPFIX=prefetcht0 -DPFIY=prefetcht0 -DPFADIST=512 -DPFXDIST=1280 -DPFYDIST=192' \
+     COMP='gcc'
+# ------------------------------------------------------------------------
+# Following 1 GEMV kernels are optimized for operands preloaded to the L2 cache
+# ------------------------------------------------------------------------
+ID=900002 ROUT='cmvn_sse.c' AUTH='R. Clint Whaley' TA='N' KNAME='ATL_cmvnk__900002' \
+   rankR=0 CacheElts=20480 SSE=3 alignA=0 alignY=16 alignX=16 minM=16 minN=2  \
+   NU=2 MU=16 LDAMUL=0 PFTUNABLE=1 ALIGNX2A=0 ADDCFLAGS=0 GEMMBASED=0 AXPYBASED=1  \
+   ALLALIGNXY=0 LDYTOP=0 FNU=1 X87=0  \
+   MFLOP=-1.508131e+04,-2.218029e+04,0.000000e+00,4.686606e+03,-3.144849e+04 \
+     ASM=GAS_x8664 \
+     CFLAGS='-x assembler-with-cpp -DPFIA=prefetcht0 -DPFIX=prefetcht2 -DPFIY=prefetchnta -DPFADIST=128 -DPFXDIST=0 -DPFYDIST=192' \
+     COMP='gcc'
+# ------------------------------------------------------------------------
+# Following 1 GEMV kernels are optimized for operands preloaded to the L1 cache
+# ------------------------------------------------------------------------
+ID=900002 ROUT='cmvn_sse.c' AUTH='R. Clint Whaley' TA='N' KNAME='ATL_cmvnk__900002' \
+   rankR=0 CacheElts=3522 SSE=3 alignA=0 alignY=16 alignX=16 minM=16 minN=2  \
+   NU=2 MU=16 LDAMUL=0 PFTUNABLE=1 ALIGNX2A=0 ADDCFLAGS=0 GEMMBASED=0 AXPYBASED=1  \
+   ALLALIGNXY=0 LDYTOP=0 FNU=1 X87=0  \
+   MFLOP=-1.508131e+04,-2.218029e+04,0.000000e+00,0.000000e+00,4.818673e+03 \
+     ASM=GAS_x8664 \
+     CFLAGS='-x assembler-with-cpp -DPFIA=prefetcht1 -DPFIX=prefetcht0 -DPFIY=prefetcht2 -DPFADIST=256 -DPFXDIST=448 -DPFYDIST=128' \
+     COMP='gcc'
+# ------------------------------------------------------------------------
+# Following 1 GEMV kernels are optimized for operands out-of-cache, but blocked
+# for L1 reuse.  These are used in low-rank update
+# ------------------------------------------------------------------------
+ID=900002 ROUT='cmvn_sse.c' AUTH='R. Clint Whaley' TA='N' KNAME='ATL_cmvnk__900002' \
+   rankR=0 CacheElts=3522 SSE=3 alignA=0 alignY=16 alignX=16 minM=16 minN=2  \
+   NU=2 MU=16 LDAMUL=0 PFTUNABLE=1 ALIGNX2A=0 ADDCFLAGS=0 GEMMBASED=0 AXPYBASED=1  \
+   ALLALIGNXY=0 LDYTOP=0 FNU=1 X87=0  \
+   MFLOP=4.126335e+03,-2.236003e+04  ASM=GAS_x8664 \
+     CFLAGS='-x assembler-with-cpp -DPFIA=prefetcht0 -DPFIX=prefetchnta -DPFADIST=0 -DPFXDIST=0 -DPFYDIST=128' \
+     COMP='gcc'

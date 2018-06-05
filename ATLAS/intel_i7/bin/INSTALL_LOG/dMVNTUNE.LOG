@@ -1,0 +1,118 @@
+
+*******************************************************************************
+*******************************************************************************
+*******************************************************************************
+*       BEGAN ATLAS3.10.3 INSTALL OF SECTION 2-1-7 ON 06/04/2018 AT 08:53     *
+*******************************************************************************
+*******************************************************************************
+*******************************************************************************
+
+
+
+make[2]: Entering directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/bin'
+cd /home/forrest/Documents/linpack/ATLAS/intel_i7/tune/blas/gemv ; make res/dMVNK.sum pre=d
+make[3]: Entering directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/tune/blas/gemv'
+/usr/bin/gcc-5 -c -DL2SIZE=33554432 -I/home/forrest/Documents/linpack/ATLAS/intel_i7/include -I/home/forrest/Documents/linpack/ATLAS/intel_i7/..//include -I/home/forrest/Documents/linpack/ATLAS/intel_i7/..//include/contrib -DAdd_ -DF77_INTEGER=int -DStringSunStyle -DATL_OS_Linux -DATL_ARCH_Corei4 -DATL_CPUMHZ=2712 -DATL_AVXMAC -DATL_AVX -DATL_SSE3 -DATL_SSE2 -DATL_SSE1 -DATL_USE64BITS -DATL_GAS_x8664 -m64 -DPentiumCPS=2400 -DATL_FULL_LAPACK -DATL_NCPU=8 -fomit-frame-pointer -mfpmath=sse -O2 -m64 -o mvnksearch.o /home/forrest/Documents/linpack/ATLAS/intel_i7/..//tune/blas/gemv/mvnksearch.c
+/usr/bin/gcc-5 -DL2SIZE=33554432 -I/home/forrest/Documents/linpack/ATLAS/intel_i7/include -I/home/forrest/Documents/linpack/ATLAS/intel_i7/..//include -I/home/forrest/Documents/linpack/ATLAS/intel_i7/..//include/contrib -DAdd_ -DF77_INTEGER=int -DStringSunStyle -DATL_OS_Linux -DATL_ARCH_Corei4 -DATL_CPUMHZ=2712 -DATL_AVXMAC -DATL_AVX -DATL_SSE3 -DATL_SSE2 -DATL_SSE1 -DATL_USE64BITS -DATL_GAS_x8664 -m64 -DPentiumCPS=2400 -DATL_FULL_LAPACK -DATL_NCPU=8 -fomit-frame-pointer -mfpmath=sse -O2 -m64 -o xmvnksearch mvnksearch.o
+mvnksearch.o: In function `TimeMVKernel':
+mvnksearch.c:(.text+0x1ca8): warning: the use of `tmpnam' is dangerous, better use `mkstemp'
+./xmvnksearch -p d
+make[4]: Entering directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/tune/blas/gemv'
+cd /home/forrest/Documents/linpack/ATLAS/intel_i7/tune/sysinfo ; make res/L1CacheSize
+make[5]: Entering directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/tune/sysinfo'
+make[5]: 'res/L1CacheSize' is up to date.
+make[5]: Leaving directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/tune/sysinfo'
+ln -s /home/forrest/Documents/linpack/ATLAS/intel_i7/tune/sysinfo/res/L1CacheSize res/L1CacheSize
+make[4]: Leaving directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/tune/blas/gemv'
+
+      Read in L1 Cache size as = 32KB.
+   900002:dmvn_sse.c (M=2300, N=2000, lda=2303) gets 1406.93 MFLOPS
+   900008:dmvn_sse.c (M=910, N=18, lda=917) gets 1988.88 MFLOPS
+   900005:dmvn_sse.c (M=290, N=12, lda=294) gets 2013.89 MFLOPS
+   900001:dmvn_C.c (M=2300, N=2000, lda=2303) gets 3203.47 MFLOPS
+ID=900002 ROUT='dmvn_sse.c' AUTH='R. Clint Whaley' TA='N' KNAME='ATL_dmvnk__900002' \
+   rankR=0 CacheElts=16384 SSE=3 alignA=0 alignY=16 alignX=16 minM=56 minN=2  \
+   NU=2 MU=56 LDAMUL=0 PFTUNABLE=1 ALIGNX2A=0 ADDCFLAGS=0 GEMMBASED=0 AXPYBASED=1  \
+   ALLALIGNXY=0 LDYTOP=0 FNU=1 X87=0  \
+   MFLOP=1.406933e+03,-6.719428e+03  ASM=GAS_x8664 \
+     CFLAGS='-x assembler-with-cpp -DPFIA=prefetcht0 -DPFIX=prefetcht2 -DPFIY=prefetcht0 -DPFADIST=896 -DPFXDIST=128 -DPFYDIST=128' \
+     COMP='gcc'
+ID=900008 ROUT='dmvn_sse.c' AUTH='R. Clint Whaley' TA='N' KNAME='ATL_dmvnk__900008' \
+   rankR=0 CacheElts=16384 SSE=3 alignA=0 alignY=16 alignX=16 minM=8 minN=6  \
+   NU=6 MU=8 LDAMUL=0 PFTUNABLE=1 ALIGNX2A=0 ADDCFLAGS=0 GEMMBASED=0 AXPYBASED=1  \
+   ALLALIGNXY=0 LDYTOP=0 FNU=1 X87=0  \
+   MFLOP=0.000000e+00,0.000000e+00,0.000000e+00,1.988875e+03,-1.395573e+04 \
+     ASM=GAS_x8664 \
+     CFLAGS='-x assembler-with-cpp -DPFIY=prefetchnta -DPFADIST=0 -DPFYDIST=256' \
+     COMP='gcc'
+ID=900005 ROUT='dmvn_sse.c' AUTH='R. Clint Whaley' TA='N' KNAME='ATL_dmvnk__900005' \
+   rankR=0 CacheElts=3932 SSE=3 alignA=0 alignY=16 alignX=16 minM=16 minN=6  \
+   NU=6 MU=16 LDAMUL=0 PFTUNABLE=1 ALIGNX2A=0 ADDCFLAGS=0 GEMMBASED=0 AXPYBASED=1  \
+   ALLALIGNXY=0 LDYTOP=0 FNU=1 X87=0  \
+   MFLOP=0.000000e+00,0.000000e+00,0.000000e+00,0.000000e+00,2.013889e+03 \
+     ASM=GAS_x8664 \
+     CFLAGS='-x assembler-with-cpp -DPFIA=prefetcht2 -DPFIX=prefetcht1 -DPFADIST=0 -DPFXDIST=0 -DPFYDIST=192' \
+     COMP='gcc'
+ID=900001 ROUT='dmvn_C.c' AUTH='R. Clint Whaley' TA='N' KNAME='ATL_dmvnk__900001' \
+   rankR=0 CacheElts=3932 SSE=0 alignA=0 alignY=0 alignX=0 minM=2 minN=4  \
+   NU=4 MU=2 LDAMUL=0 PFTUNABLE=1 ALIGNX2A=0 ADDCFLAGS=0 GEMMBASED=0 AXPYBASED=1  \
+   ALLALIGNXY=0 LDYTOP=0 FNU=1 X87=0  \
+   MFLOP=3.203471e+03,-5.717777e+03 \
+     CFLAGS='-fomit-frame-pointer -mfpmath=sse -O2 -mavx2 -mfma -m64 -DPFIA=prefetcht2 -DPFIX=prefetcht0 -DPFADIST=0 -DPFXDIST=0 -DPFYDIST=128'
+make dmvninstall
+make[4]: Entering directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/tune/blas/gemv'
+cp: cannot stat '/home/forrest/Documents/linpack/ATLAS/intel_i7/bin/xccobj.exe': No such file or directory
+Makefile:1379: recipe for target 'xccobj' failed
+make[4]: [xccobj] Error 1 (ignored)
+mkdir dmvnoutd
+rm -f dmvnoutd/*
+if [ -s "/home/forrest/Documents/linpack/ATLAS/intel_i7/src/blas/gemv/Make_dmvn" ]; then \
+           cd  /home/forrest/Documents/linpack/ATLAS/intel_i7/src/blas/gemv ; make -f Make_dmvn killall ; \
+           rm -f /home/forrest/Documents/linpack/ATLAS/intel_i7/src/blas/gemv/Make_dmvn ; \
+        fi
+./xmvnhgen -p d -F res/dMVNK.sum -d dmvnoutd
+make[5]: Entering directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/tune/blas/gemv'
+/home/forrest/Documents/linpack/ATLAS/intel_i7/bin/xextract -b /home/forrest/Documents/linpack/ATLAS/intel_i7/..//tune/blas/gemv/atlas-l2g.base order=clmajor \
+                           rout=mvn_sse nu=2 type=DREAL -def MU 7 \
+                            -o EXTDIR/dmvn_sse.c
+make[5]: Leaving directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/tune/blas/gemv'
+make[5]: Entering directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/tune/blas/gemv'
+/home/forrest/Documents/linpack/ATLAS/intel_i7/bin/xextract -b /home/forrest/Documents/linpack/ATLAS/intel_i7/..//tune/blas/gemv/atlas-l2g.base order=clmajor \
+                           rout=mvn_sse nu=6 type=DREAL -def MU 1 \
+                            -o EXTDIR/dmvn_sse.c
+make[5]: Leaving directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/tune/blas/gemv'
+make[5]: Entering directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/tune/blas/gemv'
+/home/forrest/Documents/linpack/ATLAS/intel_i7/bin/xextract -b /home/forrest/Documents/linpack/ATLAS/intel_i7/..//tune/blas/gemv/atlas-l2g.base order=clmajor \
+                           rout=mvn_sse nu=6 type=DREAL -def MU 2 \
+                            -o EXTDIR/dmvn_sse.c
+make[5]: Leaving directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/tune/blas/gemv'
+make[5]: Entering directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/tune/blas/gemv'
+/home/forrest/Documents/linpack/ATLAS/intel_i7/bin/xextract -b /home/forrest/Documents/linpack/ATLAS/intel_i7/..//tune/blas/gemv/atlas-l2g.base -langC \
+                           order=clmajor rout=mvn_C nu=4 type=DREAL \
+                           -def MU 2  -o EXTDIR/dmvn_C.c
+make[5]: Leaving directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/tune/blas/gemv'
+cp -f dmvnoutd/Make_dmvn /home/forrest/Documents/linpack/ATLAS/intel_i7/src/blas/gemv/.
+cp dmvnoutd/*.c /home/forrest/Documents/linpack/ATLAS/intel_i7/src/blas/gemv/.
+cp -f dmvnoutd/*.h /home/forrest/Documents/linpack/ATLAS/intel_i7/include/.
+if [ -s "xccobj.exe" ] ; then \
+   cp -f xccobj.exe /home/forrest/Documents/linpack/ATLAS/intel_i7/src/blas/gemv/. ; \
+elif [ -s "xccobj" ]; then \
+           cp -f xccobj /home/forrest/Documents/linpack/ATLAS/intel_i7/src/blas/gemv/. ; \
+        fi
+touch /home/forrest/Documents/linpack/ATLAS/intel_i7/..//include/atlas_mv.h
+rm -f dmvnoutd/* ; rmdir dmvnoutd
+make[4]: Leaving directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/tune/blas/gemv'
+make[3]: Leaving directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/tune/blas/gemv'
+cp /home/forrest/Documents/linpack/ATLAS/intel_i7/tune/blas/gemv/res/dMVNK.sum INSTALL_LOG/.
+make[2]: Leaving directory '/home/forrest/Documents/linpack/ATLAS/intel_i7/bin'
+
+*******************************************************************************
+*******************************************************************************
+*******************************************************************************
+*      FINISHED ATLAS3.10.3 INSTALL OF SECTION 2-1-7 ON 06/04/2018 AT 08:53   *
+*******************************************************************************
+*******************************************************************************
+*******************************************************************************
+
+
+

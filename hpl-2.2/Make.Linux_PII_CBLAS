@@ -141,8 +141,8 @@ F2CDEFS      =
 # - HPL includes / libraries / specifics -------------------------------
 # ----------------------------------------------------------------------
 #
-HPL_INCLUDES = -I$(INCdir) -I$(INCdir)/$(ARCH) $(LAinc) $(MPinc) 
-HPL_LIBS     = $(HPLlib) $(LAlib) $(MPlib) /usr/local/lib/libpapi.so
+HPL_INCLUDES = -I$(INCdir) -I$(INCdir)/$(ARCH) $(LAinc) $(MPinc)
+HPL_LIBS     = $(HPLlib) $(LAlib) $(MPlib) /usr/local/lib/libpapi.so ../PAPI_sample.o ../test_utils.o ../parse_record.o -lpfm
 #
 # - Compile time options -----------------------------------------------
 #
@@ -167,8 +167,8 @@ HPL_DEFS     = $(F2CDEFS) $(HPL_OPTS) $(HPL_INCLUDES)
 # ----------------------------------------------------------------------
 #
 CC           = /usr/bin/gcc
-CCNOOPT      = $(HPL_DEFS) 
-CCFLAGS      = $(HPL_DEFS) -fomit-frame-pointer -O3 -funroll-loops 
+CCNOOPT      = $(HPL_DEFS)
+CCFLAGS      = $(HPL_DEFS) -fomit-frame-pointer -O3 -funroll-loops
 #
 # On some platforms,  it is necessary  to use the Fortran linker to find
 # the Fortran internals used in the BLAS library.

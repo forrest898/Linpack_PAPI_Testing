@@ -50,6 +50,9 @@
 #include "hpl.h"
 #include <stdio.h>
 #include "/usr/local/include/papi.h"
+#include <perfmon/perf_event.h>
+#include "PAPI_sample.h"
+
 
 #ifdef STDC_HEADERS
 int main
@@ -106,9 +109,36 @@ int main( ARGC, ARGV )
    HPL_T_FACT                 rpfa;
    HPL_T_SWAP                 fswap;
 
+
+    int i, ret;
+    int * fds;
+	char* ev = "INST_RETIRED:ANY_P";
+	char* filename = "hungry";
+	int sample_type=PERF_SAMPLE_IP | PERF_SAMPLE_TID | PERF_SAMPLE_TIME |
+		PERF_SAMPLE_ADDR | PERF_SAMPLE_READ | PERF_SAMPLE_CALLCHAIN |
+		PERF_SAMPLE_ID | PERF_SAMPLE_CPU | PERF_SAMPLE_PERIOD |
+		PERF_SAMPLE_STREAM_ID | PERF_SAMPLE_RAW |
+		PERF_SAMPLE_DATA_SRC ;
+
+    /*
+	fds = PAPI_sample_init(1, ev, 1, sample_type, 10000000, filename);
+	if(!fds) {
+		printf("PANIC\n");
+		exit(1);
+	}
+
+	printf("At least I started\n");
+
+	ret = PAPI_sample_start(fds);
+	if(ret != PAPI_OK) {
+		printf("PANIC\n");
+		exit(1);
+	}
+    */
+
+/*
    int retval, EventSet = PAPI_NULL;
    long long values[2];
-
 
    retval = PAPI_library_init(PAPI_VER_CURRENT);
   if(retval != PAPI_VER_CURRENT) {
@@ -135,6 +165,8 @@ int main( ARGC, ARGV )
     printf("\nError starting PAPI\n" );
     return 1;
   }
+
+*/
 /* ..
  * .. Executable Statements ..
  */
@@ -179,6 +211,26 @@ int main( ARGC, ARGV )
  * 1            Equilibration (0=no,1=yes)
  * 8            memory alignment in double (> 0)
  */
+
+    if(rank == 0) {
+        fds = PAPI_sample_init(1, ev, 1, sample_type, 10000000, filename);
+    	if(!fds) {
+    		printf("PANIC\n");
+    		exit(1);
+    	}
+
+    	printf("At least I started\n");
+
+    	ret = PAPI_sample_start(fds);
+    	if(ret != PAPI_OK) {
+    		printf("PANIC\n");
+    		exit(1);
+    	}
+
+    }
+
+
+   MPI_Barrier(MPI_COMM_WORLD);
    HPL_pdinfo( &test, &ns, nval, &nbs, nbval, &pmapping, &npqs, pval, qval,
                &npfs, pfaval, &nbms, nbmval, &ndvs, ndvval, &nrfs, rfaval,
                &ntps, topval, &ndhs, ndhval, &fswap, &tswap, &L1notran,
@@ -309,14 +361,30 @@ label_end_of_npqs: ;
                    "========================================",
                    "========================================" );
 
+	ret = PAPI_sample_stop(fds, 1);
+	if(ret != PAPI_OK) {
+		printf("PANIC\n");
+		exit(1);
+    }
+
+
+/*
      if(PAPI_stop(EventSet, values) != PAPI_OK) {
          printf("\nError Closing PAPI\n");
          return 1;
      }
-      HPL_fprintf(test.outfp, "\nCycles: %lld\n Instructions: %lld\n IPC: %lf", values[0], values[1], ((double)values[0]/(double)values[1]));
+    	ret = PAPI_sample_stop(1, 1);
+	if(ret != PAPI_OK) {
+		printf("PANIC\n");
+		exit(1);
+	}
+    */
+     // HPL_fprintf(test.outfp, "\nCycles: %lld\n Instructions: %lld\n IPC: %lf", values[0], values[1], ((double)values[0]/(double)values[1]));
       if( ( test.outfp != stdout ) && ( test.outfp != stderr ) )
          (void) fclose( test.outfp );
+
    }
+
 #ifdef HPL_CALL_VSIPL
    vsip_finalize((void*)0);
 #endif

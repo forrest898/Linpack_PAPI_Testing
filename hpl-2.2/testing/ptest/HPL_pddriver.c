@@ -109,16 +109,14 @@ int main( ARGC, ARGV )
    HPL_T_FACT                 rpfa;
    HPL_T_SWAP                 fswap;
 
-
     int i, ret;
     int * fds;
-	char* ev = "INST_RETIRED:ANY_P";
-	char* filename = "hungry";
-	int sample_type=PERF_SAMPLE_IP | PERF_SAMPLE_TID | PERF_SAMPLE_TIME |
-		PERF_SAMPLE_ADDR | PERF_SAMPLE_READ | PERF_SAMPLE_CALLCHAIN |
-		PERF_SAMPLE_ID | PERF_SAMPLE_CPU | PERF_SAMPLE_PERIOD |
-		PERF_SAMPLE_STREAM_ID | PERF_SAMPLE_RAW |
-		PERF_SAMPLE_DATA_SRC ;
+	char* ev ;
+	char* filename;
+	int sample_type;
+
+
+
 
     /*
 	fds = PAPI_sample_init(1, ev, 1, sample_type, 10000000, filename);
@@ -213,7 +211,16 @@ int main( ARGC, ARGV )
  */
 
     if(rank == 0) {
-        fds = PAPI_sample_init(1, ev, 1, sample_type, 10000000, filename);
+
+    	ev = "INST_RETIRED:ANY_P";
+    	filename = "hungry";
+    	sample_type=PERF_SAMPLE_IP | PERF_SAMPLE_TID | PERF_SAMPLE_TIME |
+    		PERF_SAMPLE_ADDR | PERF_SAMPLE_READ | PERF_SAMPLE_CALLCHAIN |
+    		PERF_SAMPLE_ID | PERF_SAMPLE_CPU | PERF_SAMPLE_PERIOD |
+    		PERF_SAMPLE_STREAM_ID | PERF_SAMPLE_RAW |
+    		PERF_SAMPLE_DATA_SRC ;
+
+        fds = PAPI_sample_init(1, ev, 1, sample_type, 10000, filename);
     	if(!fds) {
     		printf("PANIC\n");
     		exit(1);

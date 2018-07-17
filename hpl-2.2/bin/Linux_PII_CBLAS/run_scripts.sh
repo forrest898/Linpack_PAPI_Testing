@@ -8,4 +8,5 @@ do
     name="$line"
 	./test_script.sh $counter $line
 	sleep 3
+	change
 done < "$filename"

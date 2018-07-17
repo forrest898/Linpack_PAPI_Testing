@@ -112,7 +112,7 @@ int main( ARGC, ARGV )
     int i, ret;
     int * fds;
 	char* ev ;
-	char* filename;
+	char* filename2;
 	int sample_type;
 
 
@@ -210,10 +210,37 @@ int main( ARGC, ARGV )
  * 8            memory alignment in double (> 0)
  */
 
+
+
     if(rank == 0) {
 
-    	ev = "INST_RETIRED:ANY_P";
-    	filename = "hungry";
+    int i;
+    for(i = 0; i < ARGC; i++) {
+        printf("%s\n", ARGV[i]);
+    }
+    filename2 = "hungry";
+	size_t len = strlen(filename2);
+	size_t len2 = strlen(ARGV[1]);
+
+        char* filename = malloc(len + len2 + 1 ); /* one for extra char, one for trailing zero */
+    strcpy(filename, filename2);
+	if(len2 == 1) {
+    	filename[len] = ARGV[1][0];
+    	filename[len + 1] = '\0';
+	}
+	else {
+		filename = malloc(len + 1 + 1 ); /* one for extra char, one for trailing zero */
+    	strcpy(filename, filename2);
+    	filename[len] = ARGV[1][0];
+		filename[len +1] = ARGV[1][1];
+    	filename[len + 2] = '\0';
+	}
+
+
+        //printf("ARGC %d\n", ARGC);
+        //scanf("%d", ret);
+    	ev = ARGV[2];
+
     	sample_type=PERF_SAMPLE_IP | PERF_SAMPLE_TID | PERF_SAMPLE_TIME |
     		PERF_SAMPLE_ADDR | PERF_SAMPLE_READ | PERF_SAMPLE_CALLCHAIN |
     		PERF_SAMPLE_ID | PERF_SAMPLE_CPU | PERF_SAMPLE_PERIOD |
@@ -396,7 +423,7 @@ label_end_of_npqs: ;
    vsip_finalize((void*)0);
 #endif
    MPI_Finalize();
-   exit( 0 );
+   //exit( 0 );
 
    return( 0 );
 /*

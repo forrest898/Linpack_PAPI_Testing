@@ -142,7 +142,7 @@ F2CDEFS      =
 # ----------------------------------------------------------------------
 #
 HPL_INCLUDES = -I$(INCdir) -I$(INCdir)/$(ARCH) $(LAinc) $(MPinc)
-HPL_LIBS     = $(HPLlib) $(LAlib) $(MPlib) /usr/local/lib/libpapi.so ../PAPI_sample.o ../test_utils.o ../parse_record.o -lpfm
+HPL_LIBS     = $(HPLlib) $(LAlib) $(MPlib) /usr/local/lib/libpapi.so ../PAPI_sample.o ../test_utils.o ../parse_record.o ../char_replace.o -lpfm
 #
 # - Compile time options -----------------------------------------------
 #

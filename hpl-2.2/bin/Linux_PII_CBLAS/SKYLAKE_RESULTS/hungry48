@@ -1,0 +1,6 @@
+PERF_RECORD_SAMPLE [91], MISC=2 (PERF_RECORD_MISC_USER), Size=64
+	PERF_SAMPLE_IP, IP: 42e9e4
+	PERF_SAMPLE_CPU, cpu: 7  res 0
+	PERF_SAMPLE_READ, read_format
+		Number: 1 enabled: 119360966 running: 119360966 
+			Value: 10000 id: 1596 

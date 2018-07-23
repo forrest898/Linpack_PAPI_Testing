@@ -1,0 +1,384 @@
+Head: 64 Prev_head=0
+64 new bytes
+Allocated 32768 bytes at 0x1a3c210
+Copying 32768 bytes from (0x7f9b6fb51000)+0 to (0x1a3c210)+0
+Copying 0 bytes from 0 to 32768
+Offset 0 Size 64
+PERF_RECORD_SAMPLE [91], MISC=2 (PERF_RECORD_MISC_USER), Size=64
+	PERF_SAMPLE_IP, IP: 7f9b5f1bc439
+	PERF_SAMPLE_CPU, cpu: 2  res 0
+	PERF_SAMPLE_READ, read_format
+		Number: 1 enabled: 4827080 running: 4827080
+			Value: 10000 id: 2084
+Head: 64 Prev_head=0
+64 new bytes
+Allocated 32768 bytes at 0x1a3c210
+Copying 32768 bytes from (0x7f9b6fb24000)+0 to (0x1a3c210)+0
+Copying 0 bytes from 0 to 32768
+Offset 0 Size 64
+PERF_RECORD_SAMPLE [91], MISC=2 (PERF_RECORD_MISC_USER), Size=64
+	PERF_SAMPLE_IP, IP: 7f9b6f03b7fc
+	PERF_SAMPLE_CPU, cpu: 7  res 0
+	PERF_SAMPLE_READ, read_format
+		Number: 1 enabled: 12203500 running: 4517409
+			Value: 10001 id: 2089
+Head: 128 Prev_head=64
+64 new bytes
+Allocated 32768 bytes at 0x1a3c210
+Copying 32704 bytes from (0x7f9b6fb24000)+64 to (0x1a3c210)+0
+Copying 64 bytes from 0 to 32704
+Offset 0 Size 64
+PERF_RECORD_SAMPLE [91], MISC=2 (PERF_RECORD_MISC_USER), Size=64
+	PERF_SAMPLE_IP, IP: 7f9b6f0bec67
+	PERF_SAMPLE_CPU, cpu: 7  res 0
+	PERF_SAMPLE_READ, read_format
+		Number: 1 enabled: 16259789 running: 8573698
+			Value: 20000 id: 2089
+Head: 192 Prev_head=128
+64 new bytes
+Allocated 32768 bytes at 0x1a3c210
+Copying 32640 bytes from (0x7f9b6fb24000)+128 to (0x1a3c210)+0
+Copying 128 bytes from 0 to 32640
+Offset 0 Size 64
+PERF_RECORD_SAMPLE [91], MISC=2 (PERF_RECORD_MISC_USER), Size=64
+	PERF_SAMPLE_IP, IP: 7f9b5f1c1b7d
+	PERF_SAMPLE_CPU, cpu: 7  res 0
+	PERF_SAMPLE_READ, read_format
+		Number: 1 enabled: 21784397 running: 14098306
+			Value: 30001 id: 2089
+Head: 256 Prev_head=192
+64 new bytes
+Allocated 32768 bytes at 0x1a3c210
+Copying 32576 bytes from (0x7f9b6fb24000)+192 to (0x1a3c210)+0
+Copying 192 bytes from 0 to 32576
+Offset 0 Size 64
+PERF_RECORD_SAMPLE [91], MISC=2 (PERF_RECORD_MISC_USER), Size=64
+	PERF_SAMPLE_IP, IP: 7f9b5f1d4f43
+	PERF_SAMPLE_CPU, cpu: 7  res 0
+	PERF_SAMPLE_READ, read_format
+		Number: 1 enabled: 26115006 running: 18428915
+			Value: 40000 id: 2089
+Head: 320 Prev_head=256
+64 new bytes
+Allocated 32768 bytes at 0x1a3c210
+Copying 32512 bytes from (0x7f9b6fb24000)+256 to (0x1a3c210)+0
+Copying 256 bytes from 0 to 32512
+Offset 0 Size 64
+PERF_RECORD_SAMPLE [91], MISC=2 (PERF_RECORD_MISC_USER), Size=64
+	PERF_SAMPLE_IP, IP: 7f9b6f0527de
+	PERF_SAMPLE_CPU, cpu: 7  res 0
+	PERF_SAMPLE_READ, read_format
+		Number: 1 enabled: 30145896 running: 22459805
+			Value: 50001 id: 2089
+Head: 384 Prev_head=320
+64 new bytes
+Allocated 32768 bytes at 0x1a3c210
+Copying 32448 bytes from (0x7f9b6fb24000)+320 to (0x1a3c210)+0
+Copying 320 bytes from 0 to 32448
+Offset 0 Size 64
+PERF_RECORD_SAMPLE [91], MISC=2 (PERF_RECORD_MISC_USER), Size=64
+	PERF_SAMPLE_IP, IP: 7f9b6f0527de
+	PERF_SAMPLE_CPU, cpu: 7  res 0
+	PERF_SAMPLE_READ, read_format
+		Number: 1 enabled: 35671544 running: 27985453
+			Value: 60001 id: 2089
+Head: 448 Prev_head=384
+64 new bytes
+Allocated 32768 bytes at 0x1a3c210
+Copying 32384 bytes from (0x7f9b6fb24000)+384 to (0x1a3c210)+0
+Copying 384 bytes from 0 to 32384
+Offset 0 Size 64
+PERF_RECORD_SAMPLE [91], MISC=2 (PERF_RECORD_MISC_USER), Size=64
+	PERF_SAMPLE_IP, IP: 7f9b6f086212
+	PERF_SAMPLE_CPU, cpu: 7  res 0
+	PERF_SAMPLE_READ, read_format
+		Number: 1 enabled: 40712746 running: 33026655
+			Value: 70000 id: 2089
+Head: 512 Prev_head=448
+64 new bytes
+Allocated 32768 bytes at 0x1a3c210
+Copying 32320 bytes from (0x7f9b6fb24000)+448 to (0x1a3c210)+0
+Copying 448 bytes from 0 to 32320
+Offset 0 Size 64
+PERF_RECORD_SAMPLE [91], MISC=2 (PERF_RECORD_MISC_USER), Size=64
+	PERF_SAMPLE_IP, IP: 4020ee
+	PERF_SAMPLE_CPU, cpu: 7  res 0
+	PERF_SAMPLE_READ, read_format
+		Number: 1 enabled: 45122184 running: 37436093
+			Value: 80001 id: 2089
+Head: 576 Prev_head=512
+64 new bytes
+Allocated 32768 bytes at 0x1a3c210
+Copying 32256 bytes from (0x7f9b6fb24000)+512 to (0x1a3c210)+0
+Copying 512 bytes from 0 to 32256
+Offset 0 Size 64
+PERF_RECORD_SAMPLE [91], MISC=2 (PERF_RECORD_MISC_USER), Size=64
+	PERF_SAMPLE_IP, IP: 7f9b5f7e2aa8
+	PERF_SAMPLE_CPU, cpu: 7  res 0
+	PERF_SAMPLE_READ, read_format
+		Number: 1 enabled: 50052295 running: 42366204
+			Value: 90000 id: 2089
+Head: 640 Prev_head=576
+64 new bytes
+Allocated 32768 bytes at 0x1a3c210
+Copying 32192 bytes from (0x7f9b6fb24000)+576 to (0x1a3c210)+0
+Copying 576 bytes from 0 to 32192
+Offset 0 Size 64
+PERF_RECORD_SAMPLE [91], MISC=2 (PERF_RECORD_MISC_USER), Size=64
+	PERF_SAMPLE_IP, IP: 7f9b5f1be173
+	PERF_SAMPLE_CPU, cpu: 7  res 0
+	PERF_SAMPLE_READ, read_format
+		Number: 1 enabled: 55564683 running: 47878592
+			Value: 100001 id: 2089
+Head: 704 Prev_head=640
+64 new bytes
+Allocated 32768 bytes at 0x1a3c210
+Copying 32128 bytes from (0x7f9b6fb24000)+640 to (0x1a3c210)+0
+Copying 640 bytes from 0 to 32128
+Offset 0 Size 64
+PERF_RECORD_SAMPLE [91], MISC=2 (PERF_RECORD_MISC_USER), Size=64
+	PERF_SAMPLE_IP, IP: 7f9b6f04f503
+	PERF_SAMPLE_CPU, cpu: 7  res 0
+	PERF_SAMPLE_READ, read_format
+		Number: 1 enabled: 60160219 running: 52474128
+			Value: 110001 id: 2089
+Head: 64 Prev_head=0
+64 new bytes
+Allocated 32768 bytes at 0x1a3c210
+Copying 32768 bytes from (0x7f9b6fb3f000)+0 to (0x1a3c210)+0
+Copying 0 bytes from 0 to 32768
+Offset 0 Size 64
+PERF_RECORD_SAMPLE [91], MISC=2 (PERF_RECORD_MISC_USER), Size=64
+	PERF_SAMPLE_IP, IP: 440ab0
+	PERF_SAMPLE_CPU, cpu: 4  res 0
+	PERF_SAMPLE_READ, read_format
+		Number: 1 enabled: 65017559 running: 4463966
+			Value: 10000 id: 2086
+Head: 128 Prev_head=64
+64 new bytes
+Allocated 32768 bytes at 0x1a3c210
+Copying 32704 bytes from (0x7f9b6fb3f000)+64 to (0x1a3c210)+0
+Copying 64 bytes from 0 to 32704
+Offset 0 Size 64
+PERF_RECORD_SAMPLE [91], MISC=2 (PERF_RECORD_MISC_USER), Size=64
+	PERF_SAMPLE_IP, IP: 7f9b5f1c1db0
+	PERF_SAMPLE_CPU, cpu: 4  res 0
+	PERF_SAMPLE_READ, read_format
+		Number: 1 enabled: 70427500 running: 9873907
+			Value: 20000 id: 2086
+Head: 192 Prev_head=128
+64 new bytes
+Allocated 32768 bytes at 0x1a3c210
+Copying 32640 bytes from (0x7f9b6fb3f000)+128 to (0x1a3c210)+0
+Copying 128 bytes from 0 to 32640
+Offset 0 Size 64
+PERF_RECORD_SAMPLE [91], MISC=2 (PERF_RECORD_MISC_USER), Size=64
+	PERF_SAMPLE_IP, IP: 7f9b6ea738f0
+	PERF_SAMPLE_CPU, cpu: 4  res 0
+	PERF_SAMPLE_READ, read_format
+		Number: 1 enabled: 74877592 running: 14323999
+			Value: 30000 id: 2086
+Head: 256 Prev_head=192
+64 new bytes
+Allocated 32768 bytes at 0x1a3c210
+Copying 32576 bytes from (0x7f9b6fb3f000)+192 to (0x1a3c210)+0
+Copying 192 bytes from 0 to 32576
+Offset 0 Size 64
+PERF_RECORD_SAMPLE [91], MISC=2 (PERF_RECORD_MISC_USER), Size=64
+	PERF_SAMPLE_IP, IP: 7f9b6f08d728
+	PERF_SAMPLE_CPU, cpu: 4  res 0
+	PERF_SAMPLE_READ, read_format
+		Number: 1 enabled: 79031696 running: 18478103
+			Value: 40001 id: 2086
+Head: 320 Prev_head=256
+64 new bytes
+Allocated 32768 bytes at 0x1a3c210
+Copying 32512 bytes from (0x7f9b6fb3f000)+256 to (0x1a3c210)+0
+Copying 256 bytes from 0 to 32512
+Offset 0 Size 64
+PERF_RECORD_SAMPLE [91], MISC=2 (PERF_RECORD_MISC_USER), Size=64
+	PERF_SAMPLE_IP, IP: 7f9b5f1bc478
+	PERF_SAMPLE_CPU, cpu: 4  res 0
+	PERF_SAMPLE_READ, read_format
+		Number: 1 enabled: 84604037 running: 24050444
+			Value: 50001 id: 2086
+Head: 384 Prev_head=320
+64 new bytes
+Allocated 32768 bytes at 0x1a3c210
+Copying 32448 bytes from (0x7f9b6fb3f000)+320 to (0x1a3c210)+0
+Copying 320 bytes from 0 to 32448
+Offset 0 Size 64
+PERF_RECORD_SAMPLE [91], MISC=2 (PERF_RECORD_MISC_USER), Size=64
+	PERF_SAMPLE_IP, IP: 7f9b6f083d94
+	PERF_SAMPLE_CPU, cpu: 4  res 0
+	PERF_SAMPLE_READ, read_format
+		Number: 1 enabled: 88989274 running: 28435681
+			Value: 60001 id: 2086
+Head: 448 Prev_head=384
+64 new bytes
+Allocated 32768 bytes at 0x1a3c210
+Copying 32384 bytes from (0x7f9b6fb3f000)+384 to (0x1a3c210)+0
+Copying 384 bytes from 0 to 32384
+Offset 0 Size 64
+PERF_RECORD_SAMPLE [91], MISC=1 (PERF_RECORD_MISC_KERNEL), Size=64
+	PERF_SAMPLE_IP, IP: ffffffff81850bd0
+	PERF_SAMPLE_CPU, cpu: 4  res 0
+	PERF_SAMPLE_READ, read_format
+		Number: 1 enabled: 94024670 running: 33471077
+			Value: 70000 id: 2086
+Head: 512 Prev_head=448
+64 new bytes
+Allocated 32768 bytes at 0x1a3c210
+Copying 32320 bytes from (0x7f9b6fb3f000)+448 to (0x1a3c210)+0
+Copying 448 bytes from 0 to 32320
+Offset 0 Size 64
+PERF_RECORD_SAMPLE [91], MISC=2 (PERF_RECORD_MISC_USER), Size=64
+	PERF_SAMPLE_IP, IP: 7f9b6f0789d0
+	PERF_SAMPLE_CPU, cpu: 4  res 0
+	PERF_SAMPLE_READ, read_format
+		Number: 1 enabled: 100508708 running: 39955115
+			Value: 80001 id: 2086
+Head: 576 Prev_head=512
+64 new bytes
+Allocated 32768 bytes at 0x1a3c210
+Copying 32256 bytes from (0x7f9b6fb3f000)+512 to (0x1a3c210)+0
+Copying 512 bytes from 0 to 32256
+Offset 0 Size 64
+PERF_RECORD_SAMPLE [91], MISC=2 (PERF_RECORD_MISC_USER), Size=64
+	PERF_SAMPLE_IP, IP: 7f9b6f0f92c9
+	PERF_SAMPLE_CPU, cpu: 4  res 0
+	PERF_SAMPLE_READ, read_format
+		Number: 1 enabled: 105898965 running: 45345372
+			Value: 90000 id: 2086
+Head: 640 Prev_head=576
+64 new bytes
+Allocated 32768 bytes at 0x1a3c210
+Copying 32192 bytes from (0x7f9b6fb3f000)+576 to (0x1a3c210)+0
+Copying 576 bytes from 0 to 32192
+Offset 0 Size 64
+PERF_RECORD_SAMPLE [91], MISC=2 (PERF_RECORD_MISC_USER), Size=64
+	PERF_SAMPLE_IP, IP: 7f9b5f7e2b46
+	PERF_SAMPLE_CPU, cpu: 4  res 0
+	PERF_SAMPLE_READ, read_format
+		Number: 1 enabled: 113111916 running: 52558323
+			Value: 100000 id: 2086
+Head: 704 Prev_head=640
+64 new bytes
+Allocated 32768 bytes at 0x1a3c210
+Copying 32128 bytes from (0x7f9b6fb3f000)+640 to (0x1a3c210)+0
+Copying 640 bytes from 0 to 32128
+Offset 0 Size 64
+PERF_RECORD_SAMPLE [91], MISC=2 (PERF_RECORD_MISC_USER), Size=64
+	PERF_SAMPLE_IP, IP: 7f9b6f03b810
+	PERF_SAMPLE_CPU, cpu: 4  res 0
+	PERF_SAMPLE_READ, read_format
+		Number: 1 enabled: 118757096 running: 58203503
+			Value: 110001 id: 2086
+Head: 128 Prev_head=64
+64 new bytes
+Allocated 32768 bytes at 0x1a3c210
+Copying 32704 bytes from (0x7f9b6fb51000)+64 to (0x1a3c210)+0
+Copying 64 bytes from 0 to 32704
+Offset 0 Size 64
+PERF_RECORD_SAMPLE [91], MISC=2 (PERF_RECORD_MISC_USER), Size=64
+	PERF_SAMPLE_IP, IP: 7f9b6f08619c
+	PERF_SAMPLE_CPU, cpu: 2  res 0
+	PERF_SAMPLE_READ, read_format
+		Number: 1 enabled: 121765279 running: 9593917
+			Value: 20000 id: 2084
+Head: 192 Prev_head=128
+64 new bytes
+Allocated 32768 bytes at 0x1a3c210
+Copying 32640 bytes from (0x7f9b6fb51000)+128 to (0x1a3c210)+0
+Copying 128 bytes from 0 to 32640
+Offset 0 Size 64
+PERF_RECORD_SAMPLE [91], MISC=2 (PERF_RECORD_MISC_USER), Size=64
+	PERF_SAMPLE_IP, IP: 7f9b5f1be173
+	PERF_SAMPLE_CPU, cpu: 2  res 0
+	PERF_SAMPLE_READ, read_format
+		Number: 1 enabled: 127464611 running: 15293249
+			Value: 30000 id: 2084
+Head: 768 Prev_head=704
+64 new bytes
+Allocated 32768 bytes at 0x1a3c210
+Copying 32064 bytes from (0x7f9b6fb3f000)+704 to (0x1a3c210)+0
+Copying 704 bytes from 0 to 32064
+Offset 0 Size 64
+PERF_RECORD_SAMPLE [91], MISC=2 (PERF_RECORD_MISC_USER), Size=64
+	PERF_SAMPLE_IP, IP: 7f9b6f03b810
+	PERF_SAMPLE_CPU, cpu: 4  res 0
+	PERF_SAMPLE_READ, read_format
+		Number: 1 enabled: 135319713 running: 64276498
+			Value: 120003 id: 2086
+Head: 832 Prev_head=768
+64 new bytes
+Allocated 32768 bytes at 0x1a3c210
+Copying 32000 bytes from (0x7f9b6fb3f000)+768 to (0x1a3c210)+0
+Copying 768 bytes from 0 to 32000
+Offset 0 Size 64
+PERF_RECORD_SAMPLE [91], MISC=2 (PERF_RECORD_MISC_USER), Size=64
+	PERF_SAMPLE_IP, IP: 7f9b6f050807
+	PERF_SAMPLE_CPU, cpu: 4  res 0
+	PERF_SAMPLE_READ, read_format
+		Number: 1 enabled: 143264731 running: 72221516
+			Value: 130001 id: 2086
+Head: 896 Prev_head=832
+64 new bytes
+Allocated 32768 bytes at 0x1a3c210
+Copying 31936 bytes from (0x7f9b6fb3f000)+832 to (0x1a3c210)+0
+Copying 832 bytes from 0 to 31936
+Offset 0 Size 64
+PERF_RECORD_SAMPLE [91], MISC=2 (PERF_RECORD_MISC_USER), Size=64
+	PERF_SAMPLE_IP, IP: 7f9b5f1c2240
+	PERF_SAMPLE_CPU, cpu: 4  res 0
+	PERF_SAMPLE_READ, read_format
+		Number: 1 enabled: 149549889 running: 78506674
+			Value: 140000 id: 2086
+Head: 960 Prev_head=896
+64 new bytes
+Allocated 32768 bytes at 0x1a3c210
+Copying 31872 bytes from (0x7f9b6fb3f000)+896 to (0x1a3c210)+0
+Copying 896 bytes from 0 to 31872
+Offset 0 Size 64
+PERF_RECORD_SAMPLE [91], MISC=2 (PERF_RECORD_MISC_USER), Size=64
+	PERF_SAMPLE_IP, IP: 7f9b6f086516
+	PERF_SAMPLE_CPU, cpu: 4  res 0
+	PERF_SAMPLE_READ, read_format
+		Number: 1 enabled: 157576591 running: 86533376
+			Value: 150001 id: 2086
+Head: 1024 Prev_head=960
+64 new bytes
+Allocated 32768 bytes at 0x1a3c210
+Copying 31808 bytes from (0x7f9b6fb3f000)+960 to (0x1a3c210)+0
+Copying 960 bytes from 0 to 31808
+Offset 0 Size 64
+PERF_RECORD_SAMPLE [91], MISC=2 (PERF_RECORD_MISC_USER), Size=64
+	PERF_SAMPLE_IP, IP: 7f9b5f1c5074
+	PERF_SAMPLE_CPU, cpu: 4  res 0
+	PERF_SAMPLE_READ, read_format
+		Number: 1 enabled: 164101277 running: 93058062
+			Value: 160000 id: 2086
+Head: 1088 Prev_head=1024
+64 new bytes
+Allocated 32768 bytes at 0x1a3c210
+Copying 31744 bytes from (0x7f9b6fb3f000)+1024 to (0x1a3c210)+0
+Copying 1024 bytes from 0 to 31744
+Offset 0 Size 64
+PERF_RECORD_SAMPLE [91], MISC=2 (PERF_RECORD_MISC_USER), Size=64
+	PERF_SAMPLE_IP, IP: 412402
+	PERF_SAMPLE_CPU, cpu: 4  res 0
+	PERF_SAMPLE_READ, read_format
+		Number: 1 enabled: 171662546 running: 100619331
+			Value: 170001 id: 2086
+Head: 1152 Prev_head=1088
+64 new bytes
+Allocated 32768 bytes at 0x1a3c210
+Copying 31680 bytes from (0x7f9b6fb3f000)+1088 to (0x1a3c210)+0
+Copying 1088 bytes from 0 to 31680
+Offset 0 Size 64
+PERF_RECORD_SAMPLE [91], MISC=2 (PERF_RECORD_MISC_USER), Size=64
+	PERF_SAMPLE_IP, IP: 43fc56
+	PERF_SAMPLE_CPU, cpu: 4  res 0
+	PERF_SAMPLE_READ, read_format
+		Number: 1 enabled: 178692220 running: 107649005
+			Value: 180001 id: 2086

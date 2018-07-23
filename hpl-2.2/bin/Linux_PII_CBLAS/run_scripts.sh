@@ -6,7 +6,6 @@ while read -r line
 do
 	counter=$((counter + 1))
     name="$line"
-	./test_script.sh $counter $line
-	sleep 3
-	change
+	mpirun -np 4 ./xhpl $counter $line > /dev/null < /dev/null
+	sleep 5
 done < "$filename"

@@ -247,7 +247,7 @@ int main( ARGC, ARGV )
     		PERF_SAMPLE_STREAM_ID | PERF_SAMPLE_RAW |
     		PERF_SAMPLE_DATA_SRC ;
 
-        fds = PAPI_sample_init(1, ev, 1, sample_type, 10000, filename);
+        fds = PAPI_sample_init(1, ev, 1, sample_type, 1000000, filename);
     	if(!fds) {
     		printf("PANIC\n");
     		exit(1);

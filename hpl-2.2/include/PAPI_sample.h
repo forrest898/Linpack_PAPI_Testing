@@ -62,16 +62,16 @@ typedef struct {
 
 
 int * PAPI_sample_init(int Eventset, char* EventCodes, int NumEvents,
-    int sample_type, int sample_period, char* filename);
+    int sample_type, int sample_period, char* filename, int PIP);
 
-struct perf_event_attr setup_perf(int EventCode, int sample_type,
-    int sample_period, int firstEvent);
+struct perf_event_attr capital_latency_event(char* EventCode, int sample_type,
+            int read_format, int sample_period);
 
 int PAPI_sample_start(int * fd);
 
 int PAPI_sample_stop(int * fd, int NumEvents);
 
 struct perf_event_attr new_setup_perf(char* EventCode, int sample_type,
-                                    int sample_period, int firstEvent);
+                                    int sample_period, int firstEvent, int PIP);
 
 #endif
